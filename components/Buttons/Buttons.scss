@@ -1,0 +1,514 @@
+#button-container {
+  text-transform: uppercase;
+  padding: 50px 0;
+  //flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 25px;
+  perspective: 1000px;
+  flex-direction: column;
+  .button {
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 25px;
+    isolation: isolate;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100px;
+    width: 200px;
+    border: #E7EEFA solid 2px;
+    color: #E7EEFA;
+    background: #313131;
+  }
+  .background {
+    z-index: -1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .yellow {
+    border: #e5e500 solid 2px;
+    color: #e5e500;
+    transition: color 1s ease-in-out  ;
+    &:hover {
+      color: #101010;
+      .background {
+        transform: rotate(0);
+      }
+    }
+    .background {
+      inset: -10px;
+      transform-origin: bottom left;
+      background: #e5e500;
+      transition: transform 1s ease-in-out;
+      transform: rotate(-0.25turn);
+    }
+  }
+
+  .purple {
+    border: #741896 solid 2px;
+    color: #741896;
+    transition: color 1s ease-in-out  ;
+    &:hover {
+      color: #101010;
+      .background {
+        transform: translateX(0);
+      }
+    }
+    .background {
+      inset: 0;
+      transform-origin: bottom left;
+      background: #741896;
+      transition: transform 1s ease-in-out;
+      transform: translateX(-100%);
+    }
+  }
+
+  .green {
+    border: #176e0a solid 2px;
+    color: #176e0a;
+    transition: color 1s ease-in-out  ;
+    &:hover {
+      color: #101010;
+      .background {
+        transform: scaleX(1) scaleY(1);
+      }
+    }
+    .background {
+      inset: 0;
+      background: #176e0a;
+      transition: transform 0.4s ease-in-out;
+      transform: scaleX(0);
+    }
+    .two {
+      transform: scaleY(0);
+    }
+  }
+
+  .red {
+    width: fit-content;
+    min-width: 200px;
+    border: #8c0000 solid 2px;
+    color:  #8c0000;
+    transition: color 1s ease-in-out,
+    min-width 0.4s ease-in-out,
+    font-weight 0.4s ease-in-out,
+    border 0.4s ease-in-out,
+    letter-spacing 0.4s ease-in-out;
+    &:hover {
+      border: #8c0000 solid 4px;
+      font-weight: normal;
+      letter-spacing: 3px;
+      min-width: 220px;
+    }
+  }
+
+  .pink {
+    border: #a35eb9 solid 2px;
+    color: #a35eb9;
+    transition: color 1s ease-in-out  ;
+    &:hover {
+      color: #101010;
+      .background {
+        transform: translateX(0);
+      }
+    }
+    .background {
+      z-index: 2;
+      inset: 0;
+      transform-origin: bottom left;
+      background: #a35eb9;
+      transition: transform 1s ease-in-out;
+      transform: translateY(-100%);
+    }
+  }
+
+  .orange {
+    //overflow: visible;
+    border: #be6e0c solid 2px;
+    color: #be6e0c;
+    transition: all 0.4s ease-in-out  0.2s;
+    &:hover {
+      color: #101010;
+      background: #be6e0c;
+      .background {
+        transform: translate(220px, -80px) rotate(45deg);
+      }
+    }
+    .background {
+      height: 50px;
+      width: 250px;
+      transform-origin: bottom left;
+      background: #be6e0c;
+      transition: transform 0.5s ease-in-out;
+      transform: translate(-145px, -80px) rotate(45deg);
+    }
+  }
+
+  .aqua {
+    border: #2cc3d3 solid 2px;
+    color: #2cc3d3;
+    transition: color 1s ease-in-out  ;
+    &:hover {
+      color: #101010;
+      .one {
+        transform: translate(-100%, 100%);
+      }
+      .two {
+        transform: translate(0);
+      }
+    }
+    .background {
+      color: #101010;
+      z-index: 2;
+      inset: 0;
+      transform-origin: bottom left;
+      background: #2cc3d3;
+      transition: transform 1s ease-in-out;
+    }
+    .one {
+      transform-origin: bottom left;
+      transform: translate(0);
+    }
+    .two {
+      transform-origin: top right;
+      transform: translate(100%, -100%);
+    }
+  }
+
+  .blue {
+    border: #001894 solid 2px;
+    color: #001894;
+    transition: color 1s ease-in-out  ;
+    &:hover {
+      color: #101010;
+      .background {
+        transform: scale(1);
+        opacity: 1;
+        color: #E7EEFA;
+      }
+    }
+    .background {
+      z-index: 2;
+      inset: 0;
+      background: #001894;
+      transition: all 1s ease-in-out;
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  .light-orange {
+    border: #c96e62 solid 2px;
+    color: #c96e62;
+    transition: color 1s ease-in-out,
+    background-color 1s ease-in-out 1s;
+    &:hover {
+      color: #101010;
+      .one {
+        transform: translateY(45px);
+        border-radius: 0 0 50% 50%;
+      }
+      .two {
+        transform: translateY(0px);
+      }
+    }
+    .background {
+      height: 100%;
+      width: 100%;
+      transform-origin: bottom left;
+      background: #c96e62;
+      transition: all 1s ease-in-out;
+      transform: translateY(-100%);
+      border-radius: 0;
+    }
+  }
+
+  .pastel {
+    overflow: visible;
+    border: none;
+    color: #101010;
+    font-weight: lighter;
+    &:hover {
+      .one {
+        transform: rotateX(0deg);
+        //z-index: 3;
+      }
+      .two {
+        transition-delay: 0.2s;
+        transform: rotateX(-270deg);
+        //z-index: 2;
+      }
+      .three {
+        transition-delay: 0s;
+        transform: rotateX(-270deg);
+        //z-index: 1;
+      }
+    }
+    .background {
+      //position: relative;
+      height: 100%;
+      width: 100%;
+      transform-origin: top;
+      transition: transform 0.8s ease-in-out,
+      z-index 0s ease-in-out 5s;
+      border-radius: 0;
+    }
+    .one {
+      transform: rotateX(0deg);
+      background-color: #b0d789;
+    }
+    .two {
+      transform: rotateX(0deg);
+      background: #c96e62;
+    }
+    .three {
+      transition-delay: 0.2s;
+      transform: rotateX(0deg);
+      background: #87e7ca;
+    }
+  }
+
+
+  .cadetblue {
+    overflow: visible;
+    border: cadetblue solid 2px;
+    color: cadetblue;
+    transition: color 1s ease-in-out;
+    &:hover {
+      .one {
+        opacity: 1;
+        transform: rotateY(0deg) scale(1);
+      }
+      .two {
+        opacity: 0;
+        transform: rotateY(270deg) scale(0.6);
+      }
+    }
+    .background {
+      z-index: 2;
+      inset: 0;
+      background: rgba(cadetblue, 0.3);
+      transition: transform 1s ease-in-out, opacity 0.7s ease-in-out;
+    }
+    .one {
+      opacity: 0;
+      transform-origin: -50px;
+      transform: rotateY(270deg) scale(0.6);
+    }
+    .two {
+      opacity: 1;
+      transform-origin: 250px;
+      transform: rotateY(0deg) scale(1);
+    }
+  }
+
+  .red-blue {
+    isolation: unset;
+    overflow: visible;
+    border: none;
+    color: white;
+    transition: color 1s ease-in-out,
+   background 0.2s ease-in-out 0.3s;
+    background: #1f5c71;
+    &:hover {
+      background: transparent;
+      .one {
+        inset: 0 0 70% 0;
+        transform: perspective(200px) rotateX(30deg);
+      }
+      .two {
+        inset: 70% 0 0 0;
+        transform: perspective(200px) rotateX(-30deg);
+      }
+    }
+    .background {
+      z-index: -1;
+      background: rgba(cadetblue, 0.3);
+      transition: transform 1s ease-in-out, inset 0.7s ease-in-out;
+    }
+    .one {
+      background-color: #1c7fee;
+      inset: -10px 0 0 -10px;
+    }
+    .two {
+      background-color: #b90202;
+      inset: 0 -10px -10px 0;
+    }
+  }
+
+  .light-red {
+    border-color: #bb6b6b;
+    color: #bb6b6b;
+    transition: color 0.2s ease-in-out;
+    background: transparent;
+    &:hover {
+      color: white;
+      .one {
+        transform: translateX(0);
+      }
+      .two {
+        transform: translateY(0);
+      }
+      .three {
+        transform: translateY(0);
+      }
+      .four {
+        transform: translateX(0);
+      }
+    }
+    .background {
+      z-index: -1;
+      background: rgba(cadetblue, 0.3);
+      transition: transform 0.4s ease-in-out;
+    }
+    .one {
+      background-color: #bb6b6b;
+      inset: 0 0 0 75%;
+      transform: translateX(100%);
+    }
+    .two {
+      background-color: #bb6b6b;
+      inset: 0 25% 0 50%;
+      transform: translateY(100%);
+    }
+    .three {
+      background-color: #bb6b6b;
+      inset: 0 50% 0 25%;
+      transform: translateY(-100%);
+    }
+    .four {
+      background-color: #bb6b6b;
+      inset: 0 75% 0 0;
+      transform: translateX(-100%);
+    }
+  }
+
+
+  .blue-purple {
+    border: none;
+    color: #12a0d9;
+    transition: color 0.2s ease-in-out;
+    background: transparent;
+    &:hover {
+      color: #4801c7;
+      .one {
+        top: calc(100% - 10px);
+      }
+      .two {
+        left: calc(100% - 10px);
+      }
+      .three {
+        right: calc(100% - 10px);
+      }
+      .four {
+        bottom: calc(100% - 10px);
+      }
+    }
+    .background {
+      z-index: -1;
+      background: rgba(cadetblue, 0.3);
+      transition: all 0.4s ease-in-out;
+    }
+    .one {
+      background-color: #4801c7;
+      height: 2px;
+      width: 100%;
+      top: 10px;
+      z-index: 2;
+    }
+    .two {
+      background-color: #4801c7;
+      height: 100%;
+      width: 2px;
+      left: 10px;
+    }
+    .three {
+      background-color: #12a0d9;
+      height: 100%;
+      width: 2px;
+      right: 10px;
+    }
+    .four {
+      background-color: #12a0d9;
+      height: 2px;
+      width: 100%;
+      bottom: 10px;
+    }
+  }
+
+  .crimson {
+    overflow: visible;
+    border: 5px #252525 solid;
+    color: white;
+    transition: color 0.2s ease-in-out;
+    background: crimson;
+    isolation: unset;
+    &:hover {
+      .one {
+        inset: -10px 0 0 -10px;
+      }
+      .two {
+        inset: 0 -10px -10px 0;
+      }
+    }
+    .background {
+      transition: all 0.4s ease-in-out;
+    }
+    .one {
+      z-index: -1;
+      background: crimson;
+      inset: -10px 60% 60% -10px;
+
+    }
+    .two {
+      background: crimson;
+      inset: 60% -10px -10px 60%;
+
+    }
+  }
+
+
+  .big-letter {
+    overflow: visible;
+    border: 5px white solid;
+    color: black;
+    isolation: unset;
+    background: white;
+    font-weight: lighter;
+    &:hover {
+      color: white;
+      .background {
+        transform: rotate(10deg);
+        opacity: 1;
+      }
+      .text {
+        span {
+          transform:  rotate(360deg) scale(3) translate(-5px, -2px);
+        }
+      }
+    }
+    .background {
+      z-index: 2;
+      transition: all 0.4s ease-in-out;
+      background: black;
+      inset: 0;
+      opacity: 0;
+    }
+    .text {
+      z-index: 3;
+      span {
+        transition: transform 0.4s ease-in-out;
+        display: inline-block;
+      }
+    }
+  }
+
+}

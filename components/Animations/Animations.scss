@@ -1,0 +1,260 @@
+#animations {
+  height: 100%;
+  width: 100%;
+  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .animation {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tile {
+    width: 100%;
+    background: #2fc9e2;
+    .spin {
+      height: 150px;
+      width: 150px;
+      background: white;
+      border-radius: 20px;
+      perspective: 200px;
+      animation: tile 2s linear infinite;
+    }
+
+    @keyframes tile {
+      0% {
+        //transform: rotateY(360deg);
+      }
+      50% {
+        transform: perspective(200px) rotateX(180deg);
+      }
+      100% {
+        transform: perspective(200px) rotateZ(180deg);
+      }
+    }
+  }
+  .car {
+    width: 100%;
+    clip-path: polygon(0 14%, 100% 14%, 100% 100%, 0% 100%);
+    position: relative;
+    background: #101010;
+    overflow: hidden;
+    .bg {
+      width: 100%;
+      height: 100%;
+      background-image: url("../../assets/car/bg.jpg");
+      background-size: cover;
+      animation: car 15s linear infinite;
+    }
+    .car-element {
+      position: absolute;
+      bottom: 0;
+      left: 500px;
+      width: 200px;
+      height: 200px;
+      background-image: url("../../assets/car/car.png");
+      background-size: cover;
+    }
+    .bike {
+      z-index: 2;
+      position: absolute;
+      bottom: 10px;
+      left: 315px;
+      width: 100px;
+      height: 100px;
+      background-image: url("../../assets/car/motobike.png");
+      background-size: cover;
+    }
+
+    @keyframes car {
+      0% {
+        //transform: rotateY(360deg);
+      }
+      100% {
+        background-position: -9886px;
+      }
+    }
+  }
+
+  .lightning {
+    background: #101010;
+    align-items: center;
+    div {
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: #414141;
+      font-size: 120px;
+      animation: 2s infinite linear lightning;
+    }
+
+    div:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    div:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    div:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    div:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    div:nth-child(5) {
+      animation-delay: 1s;
+    }
+    div:nth-child(6) {
+      animation-delay: 1.2s;
+    }
+    div:nth-child(7) {
+      animation-delay: 1.4s;
+    }
+    div:nth-child(8) {
+      animation-delay: 1.6s;
+    }
+
+    @keyframes lightning {
+      40% {
+        color: #414141;
+        text-shadow: none;
+      }
+      45%, 50% {
+        color: yellow;
+        text-shadow: 0 0 20px yellow;
+      }
+      60% {
+        color: #414141;
+        text-shadow: none;
+      }
+    }
+  }
+
+  .text-background {
+    font-size: 120px;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    font-weight: bolder;
+    background: url("../../assets/text-bg/image.jpg");
+    background-size: 120px 120px;
+    background-clip: text;
+    color: transparent;
+    animation: bg 35s linear infinite;
+
+    @keyframes bg {
+      0% {
+        //transform: rotateY(360deg);
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+  }
+
+  .bouncing {
+    margin: 150px;
+    width: 500px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .floor {
+      position: absolute;
+      inset: 97% 0 0 0;
+      background: white;
+    }
+    .ball {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background: white;
+      animation: bounce 1.2s ease-in-out infinite;
+    }
+
+    :nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    :nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    :nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    :nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    :nth-child(5) {
+      animation-delay: 1s;
+    }
+    @keyframes bounce  {
+      50% {
+        transform: translateY(345px);
+      }
+    }
+  }
+
+  .windows {
+    background: #070f42;
+    .container {
+      position: relative;
+      min-height: 200px;
+      min-width: 200px;
+      max-width: 200px;
+      max-height: 200px;
+      transform: rotate(45deg);
+      animation: extend 3s ease-in-out infinite both;
+      .square {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        animation: spin 3s linear infinite;
+      }
+      :nth-child(1){
+        bottom: 0;
+        right: 0;
+        background: palegoldenrod;
+      }
+      :nth-child(2){
+        top: 0;
+        left: 0;
+        background: paleturquoise;
+      }
+      :nth-child(3){
+        bottom: 0;
+        left: 0;
+        background: palegreen;
+      }
+      :nth-child(4){
+        top: 0;
+        right: 0;
+        background: palevioletred;
+      }
+    }
+    @keyframes extend {
+      50% {
+        min-height: 300px;
+        min-width: 300px;
+        max-width: 300px;
+        max-height: 300px;
+      }
+      90%,100% {
+        transform: rotate(405deg);
+      }
+    }
+    @keyframes spin {
+      10% {
+        transform: rotate(0);
+      }
+      70%,100% {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+}

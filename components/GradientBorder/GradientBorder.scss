@@ -1,0 +1,65 @@
+#gradient-border {
+  position: relative;
+  padding: 30px;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 50%;
+  .gradient-container {
+    position: absolute;
+    padding: 30px;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: all 40s linear;
+    height: 700px;
+    z-index: -1;
+    width: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &:hover {
+    .gradient-container {
+      transform: translate(-50%, -50%) rotate(10000deg);
+    }
+  }
+  .gradient {
+    height: 700px;
+    z-index: -1;
+    width: 700px;
+    animation: gradientBorder 5s infinite linear;
+    background-image: conic-gradient(
+                    rgba(255, 0, 0, 1) 0%,
+                    rgba(255, 154, 0, 1) 10%,
+                    rgba(208, 222, 33, 1) 20%,
+                    rgba(79, 220, 74, 1) 30%,
+                    rgba(63, 218, 216, 1) 40%,
+                    rgba(47, 201, 226, 1) 50%,
+                    rgba(28, 127, 238, 1) 60%,
+                    rgba(95, 21, 242, 1) 70%,
+                    rgba(186, 12, 248, 1) 80%,
+                    rgba(251, 7, 217, 1) 90%,
+                    rgba(255, 0, 0, 1) 100%
+    );
+
+  }
+  .children {
+    z-index: 2;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@keyframes gradientBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
